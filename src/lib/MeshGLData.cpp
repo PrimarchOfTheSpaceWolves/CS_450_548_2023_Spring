@@ -24,8 +24,10 @@ void createMeshGL(Mesh &m, MeshGL &mgl) {
 	glBindBuffer(GL_ARRAY_BUFFER, mgl.VBO);	
 
 	// Attribute, # of components, type, normalized?, stride, array buffer offset
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
-	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, color));
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 
+							(void*)offsetof(Vertex, position));
+	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), 
+							(void*)offsetof(Vertex, color));
 	
 	// Create Element Buffer Object (EBO)
 	glGenBuffers(1, &(mgl.EBO));
